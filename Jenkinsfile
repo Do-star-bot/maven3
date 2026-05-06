@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master',
-                    url: 'https://github.com/KhushiJigali/maven-email.git',
+                    url: 'https://github.com/Do-star-bot/maven3.git',
                     credentialsId: 'github-token'
             }
         }
@@ -48,7 +48,7 @@ pipeline {
             emailext (
                 subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
                 body: "Build succeeded!\nCheck: ${BUILD_URL}",
-                to: "khushikiranjigali@gmail.com"
+                to: "rharshitha173@gmail.com"
             )
         }
 
@@ -56,7 +56,7 @@ pipeline {
             emailext (
                 subject: "FAILED: ${JOB_NAME} #${BUILD_NUMBER}",
                 body: "Build failed!\nCheck: ${BUILD_URL}",
-                to: "khushikiranjigali@gmail.com"
+                to: "rharshitha173@gmail.com"
             )
         }
     }
